@@ -2,8 +2,6 @@
 
 use warnings;
 
-my $config = "$ENV{HOME}/.config/rofi/helper/config.rasi";
-
 my $current_brightness = `xbacklight -get`;
 chomp for ($current_brightness);
 
