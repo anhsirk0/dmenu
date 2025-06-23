@@ -10,28 +10,27 @@ my $config = "$ENV{HOME}/.config/rofi/browser/config.rasi";
 
 # add your bookmarks here "Title -> url" (" -> " is important)
 my @options = (
-    "youtube -> youtube.com/feed/subscriptions",
-    "lichess -> lichess.org",
-    "codeberg -> codeberg.org/anhsirk0",
-    "github -> github.com/anhsirk0",
-    "reddit -> reddit.com",
-    "mail -> mail.yandex.com",
-    "monkeytype -> monkeytype.com",
-    "fm6000 -> github.com/anhsirk0/fetch-master-6000",
-    # "network 3000 -> http://" . $local_ip . ":3000",
-    # "network 8000 -> http://" . $local_ip . ":8000",
+    "Youtube -> youtube.com/feed/subscriptions",
+    "Lichess -> lichess.org",
+    "Codeberg -> codeberg.org/anhsirk0",
+    "Github -> github.com/anhsirk0",
+    "Reddit -> reddit.com",
+    "Mail -> mail.yandex.com",
+    "Monkeytype -> monkeytype.com",
+    "Fm6000 -> github.com/anhsirk0/fetch-master-6000",
+    # "Network 3000 -> http://" . $local_ip . ":3000",
+    # "Network 8000 -> http://" . $local_ip . ":8000",
     "3000 -> http://localhost:3000",
     "4000 -> http://localhost:4000",
     "4200 -> http://localhost:4200",
     "5173 -> http://localhost:5173",
-    "whatsApp web -> web.whatsapp.com"
+    "WhatsApp Web -> web.whatsapp.com"
     );
 
 my $joined_options = join "\n", map { (split " -> ", $_)[0] } @options;
 my $prompt = "Browser »";
-chomp(my $chosen = `echo "$joined_options" | dmenu -p "$prompt"`);
-
-unless ($chosen) { exit };
+chomp(my $chosen = `echo "$joined_options" | dmenu -p "$prompt" -i`);
+exit unless ($chosen);
 
 # match if $chosen is a bookmark
 my ($url) = grep { /^$chosen/ } @options;

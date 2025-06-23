@@ -21,7 +21,7 @@ sub main {
 
     # collect songs in @songs (no duplicates)
     my %seen = ();
-    my @songs = grep { ! $seen{substr $_, 0, 4} ++ } @all;
+    my @songs = grep { ! $seen{substr $_, 0, 5} ++ } @all;
 
     my @names = ();
     my %ids = (); # { "name" => id }
@@ -40,7 +40,7 @@ sub main {
 
     my $joined_names = join "\n", @names;
     my $prompt = "Lollypop »";
-    chomp(my $var = `echo "$joined_names" | dmenu -p "$prompt" -l 30`);
+    chomp(my $var = `echo "$joined_names" | dmenu -p "$prompt" -l 30 -i`);
 
     exit unless ($var);
     my ($song, $artist) = split "-", $var;

@@ -15,7 +15,7 @@ $uptime =~ s/up /Uptime: /g;
 
 my $prompt = "$uptime »";
 my $joined_options = join "\n", map { $$_[0] } @options;
-chomp(my $chosen = `echo "$joined_options" | dmenu -p "$prompt" -l 15`);
+chomp(my $chosen = `echo "$joined_options" | dmenu -p "$prompt" -l 15 -i`);
 exit unless ($chosen);
 
 for (@options) {

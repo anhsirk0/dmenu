@@ -10,7 +10,7 @@ unshift(@options, ("Toggle mute", "Inc volume 10%", "Dec volume 10%"));
 
 my $joined_options = join "\n", @options;
 my $prompt = "Volume ($current_volume) »";
-chomp(my $chosen = `echo "$joined_options" | dmenu -p "$prompt" -l 15`);
+chomp(my $chosen = `echo "$joined_options" | dmenu -p "$prompt" -l 15 -i`);
 
 unless ($chosen) { exit };
 

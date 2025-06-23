@@ -24,7 +24,7 @@ for my $i (1 .. scalar @window_list) {
 chomp $windows;
 
 my $prompt = "Windows »";
-chomp(my $chosen = `echo "$windows" | dmenu -p "$prompt" -l 15`);
+chomp(my $chosen = `echo "$windows" | dmenu -p "$prompt" -l 15 -i`);
 exit unless ($chosen);
 
 my ($num) = $chosen =~ m/^(\d+).*$/;

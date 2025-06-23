@@ -11,7 +11,7 @@ push(@options, "Blugon"); # Blue light filter
 
 my $joined_options = join "\n", @options;
 my $prompt = "Brightness ($current_brightness) »";
-chomp(my $chosen = `echo "$joined_options" | dmenu -p "$prompt" -l 15`);
+chomp(my $chosen = `echo "$joined_options" | dmenu -p "$prompt" -l 15 -i`);
 
 exit unless ($chosen);
 
