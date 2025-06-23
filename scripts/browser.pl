@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-my $browser = "firefox-developer-edition";
+my $browser = "firefox";
 # my $browser = "brave-browser";
 my $config = "$ENV{HOME}/.config/rofi/browser/config.rasi";
 
