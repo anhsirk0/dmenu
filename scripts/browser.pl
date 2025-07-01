@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-my $browser = "firefox";
+my $browser = "librewolf";
 # my $browser = "brave-browser";
 my $config = "$ENV{HOME}/.config/rofi/browser/config.rasi";
 
@@ -24,6 +24,7 @@ my @options = (
     "4000 -> http://localhost:4000",
     "4200 -> http://localhost:4200",
     "5173 -> http://localhost:5173",
+    "Duck-AI -> http://www.duck.ai",
     "WhatsApp Web -> web.whatsapp.com"
     );
 
