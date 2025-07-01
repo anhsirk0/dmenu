@@ -1,8 +1,11 @@
 #!/usr/bin/env perl
 
 use warnings;
+use File::Basename;
+use Cwd qw(abs_path);
 
-my $EMOJI_FILE = "all-emojis.txt";
+my $script_dir = dirname(abs_path($0));
+my $EMOJI_FILE = $script_dir . "/all-emojis.txt";
 open my $FH, '<', $EMOJI_FILE or die "Can't open file: $!";
 my $all_emojis = do { local $/; <$FH> };
 close $FH;
