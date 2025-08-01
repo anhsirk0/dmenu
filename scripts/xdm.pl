@@ -16,7 +16,7 @@ my $count = 0;
 
 for my $i (1 .. scalar @window_list) {
     my ($idx, $h, $name) = $window_list[$i -1] =~ m/^.*?\s+(\d+) (.*?) (.*?)$/;
-    if ($name =~ m/\[\d+%\]/) {
+    if ($name =~ m/^\[\d+%\]/) {
         $count++;
         $windows .= "$count) $name\n";        
     }
